@@ -1,0 +1,52 @@
+{
+  "name": "hyperapp-typescript-electron-boilerplate",
+  "version": "0.0.1",
+  "description": "Hyperapp + TypeScript + Electron boilerplate",
+  "scripts": {
+    "test": "jest --no-cache",
+    "build": "time tsc && time copyfiles -e '**/*.test.{ts,tsx}' -f './src/**/*.{html,css}' ./dist",
+    "watch": "npm run build && chokidar './src/**/*.{ts,tsx,html,css}' -c 'npm run build'",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "format": "prettier --write {src,test}/**/*.{ts,tsx}",
+    "start": "npm run build && electron ./dist/main.js"
+  },
+  "repository": "https://github.com/yhirose/hyperapp-typescript-electron-boilerplate",
+  "keywords": [
+    "hyperapp",
+    "electron",
+    "typescript"
+  ],
+  "author": "Yuji Hirose",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^22.0.1",
+    "chokidar-cli": "^1.2.0",
+    "copyfiles": "^1.2.0",
+    "electron": "^1.7.10",
+    "jest": "^22.0.4",
+    "prettier": "^1.9.2",
+    "ts-jest": "^22.0.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "electron-devtools-installer": "^2.2.3",
+    "hyperapp": "^1.0.1",
+    "hyperapp-redux-devtools": "^1.1.2",
+    "livereload": "^0.6.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
