@@ -1,5 +1,8 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier"
+  ],
   "rules": {
     "interface-name": [false, "always-prefix"],
     "max-line-length": {
@@ -7,12 +10,8 @@
         120
       ]
     },
-    "no-arg": true,
-    "no-bitwise": true,
     "no-var-requires": false,
-    "object-literal-sort-keys": false,
-    "ordered-imports": false,
-    "trailing-comma": [ true, { "multiline": "never", "singleline": "never" }]
+    "object-literal-sort-keys": false
   },
   "jsRules": {
     "max-line-length": {
