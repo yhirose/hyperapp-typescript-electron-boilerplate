@@ -1,32 +1,48 @@
-import { app, h } from "hyperapp";
+import { h, app, ActionsType, View } from "hyperapp";
 const devtools = require("hyperapp-redux-devtools");
 
-interface State {
+interface CounterState {
   count: number;
 }
 
+interface CounterActions {
+  down(): CounterState;
+  up(): CounterState;
+}
+
+interface State {
+  counter: CounterState;
+}
+
 interface Actions {
-  down(): Partial<State>;
-  up(): Partial<State>;
+  counter: CounterActions;
 }
 
 export const main = devtools(app)(
+  // State
   {
-    count: 0
+    counter: {
+      count: 0
+    }
   },
+  // Actions
   {
-    down: () => (state: State) => ({ count: state.count - 1 }),
-    up: () => (state: State) => ({ count: state.count + 1 })
-  },
-  (state: State, actions: Actions) => {
+    counter: {
+      down: () => state => ({ count: state.count - 1 }),
+      up: () => state => ({ count: state.count + 1 })
+    }
+  } as ActionsType<State, Actions>,
+  // View
+  ((state, actions) => {
     return (
       <div>
-        <h1>{state.count}</h1>
-        <button onclick={actions.down}>-</button>
-        <button onclick={actions.up}>+</button>
+        <h1>{state.counter.count}</h1>
+        <button onclick={actions.counter.down}>-</button>
+        <button onclick={actions.counter.up}>+</button>
       </div>
     );
-  },
+  }) as View<State, Actions>,
+  // DOM Element
   document.body
 );
 
