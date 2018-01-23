@@ -43,6 +43,8 @@ function createWindow() {
 
   // Install Redux DevTools
   if (isDev) {
+    require("devtron").install();
+
     const {
       default: installExtension,
       REDUX_DEVTOOLS

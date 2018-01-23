@@ -19,13 +19,15 @@
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "format": "prettier --write {src,test}/**/*.{ts,tsx}"
   },
-  "main" : "./dist/main.js",
+  "main": "./dist/main.js",
   "devDependencies": {
     "@types/jest": "^22.0.1",
     "chokidar-cli": "^1.2.0",
     "copyfiles": "^1.2.0",
+    "devtron": "^1.4.0",
     "electron": "^1.7.10",
     "electron-builder": "^19.55.2",
+    "hyperapp-redux-devtools": "^1.1.4",
     "jest": "^22.1.1",
     "prettier": "^1.10.2",
     "ts-jest": "^22.0.1",
@@ -37,7 +39,6 @@
     "electron-devtools-installer": "^2.2.3",
     "electron-is-dev": "^0.3.0",
     "hyperapp": "^1.0.2",
-    "hyperapp-redux-devtools": "^1.1.4",
     "livereload": "^0.6.3"
   },
   "build": {
@@ -49,8 +50,7 @@
       "./dist/**/*.css",
       "./dist/**/*.html"
     ],
-    "asarUnpack": [
-    ]
+    "asarUnpack": []
   },
   "jest": {
     "transform": {
