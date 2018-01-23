@@ -27,8 +27,10 @@
     "devtron": "^1.4.0",
     "electron": "^1.7.10",
     "electron-builder": "^19.55.2",
+    "electron-devtools-installer": "^2.2.3",
     "hyperapp-redux-devtools": "^1.1.4",
     "jest": "^22.1.1",
+    "livereload": "^0.6.3",
     "prettier": "^1.10.2",
     "ts-jest": "^22.0.1",
     "tslint": "^5.9.1",
@@ -36,10 +38,8 @@
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "electron-devtools-installer": "^2.2.3",
     "electron-is-dev": "^0.3.0",
-    "hyperapp": "^1.0.2",
-    "livereload": "^0.6.3"
+    "hyperapp": "^1.0.2"
   },
   "build": {
     "appId": "com.github.yhirose.hyperapp-typescript-electron-boilerplate",
