@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run build && electron ./dist/main.js",
     "test": "jest --no-cache",
-    "build": "tsc && copyfiles -e '**/*.test.{ts,tsx}' -f './src/**/*.{html,css}' ./dist",
+    "build": "tsc && copyfiles -e \"**/*.test.{ts,tsx}\" -f \"./src/**/*.{html,css}\" ./dist",
     "watch": "npm run build && chokidar './src/**/*.{ts,tsx,html,css}' -c 'npm run build'",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "format": "prettier --write {src,test}/**/*.{ts,tsx}"

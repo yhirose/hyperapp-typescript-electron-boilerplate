@@ -20,11 +20,15 @@ let mainWindow: Electron.BrowserWindow;
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
+    webPreferences: {
+      webSecurity: false
+    },
     height: 600,
     width: 800
   });
 
   // and load the index.html of the app.
+  console.log('__dirname', __dirname);
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "./render.html"),
