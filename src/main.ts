@@ -2,18 +2,19 @@ import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import * as url from "url";
 
-const {
-  default: installExtension,
-  REDUX_DEVTOOLS
-} = require("electron-devtools-installer");
-const { createServer } = require("livereload");
+const isDev = require('electron-is-dev');
 
 // Live reload
-const livereload = createServer({
-  exts: ["ts", "tsx", "html", "css"],
-  delay: 5000
-});
-livereload.watch(path.join(__dirname, "../src"));
+if (isDev) {
+  const { createServer } = require("livereload");
+
+  const livereload = createServer({
+    exts: ["ts", "tsx", "html", "css"],
+    delay: 5000
+  });
+
+  livereload.watch(path.join(__dirname, "../src"));
+}
 
 let mainWindow: Electron.BrowserWindow;
 
@@ -41,7 +42,14 @@ function createWindow() {
   mainWindow.webContents.openDevTools();
 
   // Install Redux DevTools
-  installExtension(REDUX_DEVTOOLS);
+  if (isDev) {
+    const {
+      default: installExtension,
+      REDUX_DEVTOOLS
+    } = require("electron-devtools-installer");
+
+    installExtension(REDUX_DEVTOOLS);
+  }
 
   // Emitted when the window is closed.
   mainWindow.on("closed", () => {
