@@ -1,11 +1,15 @@
 import { h, app, ActionsType, View } from "hyperapp";
-const isDev = require('electron-is-dev');
+const isDev = require("electron-is-dev");
 
 let App = app;
 
 if (isDev) {
-  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
-  ':35729/livereload.js?snipver=1"></' + 'script>')
+  document.write(
+    '<script src="http://' +
+      (location.host || "localhost").split(":")[0] +
+      ':35729/livereload.js?snipver=1"></' +
+      "script>"
+  );
 
   const devtools = require("hyperapp-redux-devtools");
   App = devtools(app);
@@ -48,7 +52,7 @@ export const main = App(
   ((state, actions) => {
     return (
       <div>
-        <h1>[{state.isDev ? 'Development' : 'Productoin'}]</h1>
+        <h1>[{state.isDev ? "Development" : "Productoin"}]</h1>
         <h1>{state.counter.count}</h1>
         <button onclick={actions.counter.down}>-</button>
         <button onclick={actions.counter.up}>+</button>

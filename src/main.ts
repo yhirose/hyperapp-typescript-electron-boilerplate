@@ -2,7 +2,7 @@ import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import * as url from "url";
 
-const isDev = require('electron-is-dev');
+const isDev = require("electron-is-dev");
 
 // Live reload
 if (isDev) {
@@ -29,7 +29,6 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  console.log('__dirname', __dirname);
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "./render.html"),
