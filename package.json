@@ -1,6 +1,6 @@
 {
   "name": "hyperapp-typescript-electron-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hyperapp + TypeScript + Electron boilerplate",
   "repository": "https://github.com/yhirose/hyperapp-typescript-electron-boilerplate",
   "keywords": [
@@ -22,15 +22,13 @@
   "main": "./dist/main.js",
   "devDependencies": {
     "@types/jest": "^22.0.1",
+    "@types/node": "8.9.3",
     "chokidar-cli": "^1.2.0",
-    "copyfiles": "^1.2.0",
-    "devtron": "^1.4.0",
-    "electron": "^1.7.10",
-    "electron-builder": "^19.55.2",
-    "electron-devtools-installer": "^2.2.3",
-    "hyperapp-redux-devtools": "^1.1.4",
+    "copyfiles": "^2.0.0",
+    "electron": "2.0.0",
+    "electron-builder": "^20.13.3",
     "jest": "^22.1.1",
-    "livereload": "^0.6.3",
+    "livereload": "^0.7.0",
     "prettier": "^1.10.2",
     "ts-jest": "^22.0.1",
     "tslint": "^5.9.1",
@@ -39,7 +37,9 @@
   },
   "dependencies": {
     "electron-is-dev": "^0.3.0",
-    "hyperapp": "^1.0.2"
+    "hyperapp": "^1.0.2",
+    "hyperapp-redux-devtools": "^1.1.6",
+    "livereload": "^0.7.0"
   },
   "build": {
     "appId": "com.github.yhirose.hyperapp-typescript-electron-boilerplate",
