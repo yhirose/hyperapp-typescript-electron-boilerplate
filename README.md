@@ -12,7 +12,7 @@ Hyperapp + TypeScript + Electron boilerplate
 
 ```bash
 # install
-git clone https://github.com/yhirose/hyperapp-typescript-electron
+git clone git clone https://github.com/yhirose/hyperapp-typescript-electron-boilerplate
 npm install
 
 # setup watch build
